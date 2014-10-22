@@ -1,0 +1,21 @@
+package pi;
+
+public class ex1 {
+	public static void main(String args[]){
+		
+		int index= 0;
+		int i= 3;
+		int t= 5;
+		int soma = 0;
+		
+		
+		while(index<1000){
+			if(index % i == 0 || index % t == 0){
+				soma += index;
+				
+			}index +=1;		
+		}System.out.println(soma);
+
+	}
+
+}
