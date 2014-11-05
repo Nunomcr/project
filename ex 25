@@ -1,0 +1,65 @@
+
+public class Problem25 {
+	
+	  
+    final static int FIBO_MAX = 10000;  
+    final static int SB_LENGTH = 1000;  
+    static StringBuilder left;  
+    static StringBuilder right;  
+  
+    static {  
+        left = new StringBuilder(SB_LENGTH);  
+        right = new StringBuilder(SB_LENGTH);  
+        for (int i = 0; i < SB_LENGTH; i++) {  
+            left.append('0');  
+            right.append('0');  
+        }  
+        left.setCharAt(0, '1');  
+        right.setCharAt(0, '1');  
+    }  
+    
+	public static void main(String[] args) {  
+	        int fibo = 2;  
+	        try {  
+	            while (fibo < FIBO_MAX) {  
+	                fibo++;  
+	                if (fibo % 2 == 1) {  
+	                    addStrings(0, 0, left, right);  
+	                    if (fibo % 100 == 0) {  
+	                        System.out.println("f(" + fibo + ") = " + left);  
+	                    }  
+	                } else {  
+	                    addStrings(0, 0, right, left);  
+	                    if (fibo % 100 == 0) {  
+	                        System.out.println("f(" + fibo + ") = " + right);  
+	                    }  
+	                }  
+	            }  
+	        } catch (Exception ex) {  
+	            System.out.println(ex);  
+	        }  
+	        System.out.println("f(" + fibo + ") = " + left);  
+	        System.out.println("f(" + fibo + ") = " + right);  
+	    }  
+	  
+	    static void addStrings(int idx, int carryIn,  
+	            StringBuilder update, StringBuilder keep) throws Exception {  
+	        carryIn = val(update, idx) + val(keep, idx) + carryIn;  
+	        update.setCharAt(idx, (char) ((carryIn % 10) + 48));  
+	        idx++;  
+	        if (idx >= SB_LENGTH) {  
+	            if (carryIn > 9) {  
+	                throw new Exception(  
+	                    "Result is larger than " + SB_LENGTH + " digits.");  
+	            }  
+	        } else {  
+	            addStrings(idx, (carryIn / 10), update, keep);  
+	        }  
+	    }  
+	  
+	    private static int val(StringBuilder sb, int idx) {  
+	        return ((int) sb.charAt(idx) - 48);  
+	    }  
+	}  
+
+
