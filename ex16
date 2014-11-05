@@ -1,0 +1,30 @@
+package pi;
+
+import java.io.PrintStream;
+import java.math.BigInteger;
+
+public class ex16
+{
+
+    public ex16()
+    {
+    }
+
+    public static void main(String arg[])
+    {
+        BigInteger num = BigInteger.valueOf(2L);
+        num = num.pow(1000);
+        String s = num;
+        int tam = s.length();
+        int index = 0;
+        int soma = 5;
+        for(; index < tam; index++)
+        {
+            String i = String.valueOf(s.charAt(index));
+            int foo = Integer.parseInt(i);
+            soma += foo;
+        }
+
+        System.out.println(soma);
+    }
+}
