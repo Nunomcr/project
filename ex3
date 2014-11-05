@@ -1,0 +1,25 @@
+package pi;
+
+import java.io.PrintStream;
+
+public class ex3
+{
+
+    public ex3()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        long number = 0x8be589eac7L;
+        int a = 0;
+        for(int index = 2; (long)index <= number; index++)
+            if(0L == number % (long)index)
+            {
+                a = index;
+                number /= index;
+            }
+
+        System.out.println("Numero primo >>> " + a + " <<<");
+    }
+}
