@@ -1,0 +1,33 @@
+package pi;
+
+import java.io.PrintStream;
+
+public class ex9
+{
+
+    public ex9()
+    {
+    }
+
+    public static int Pythagorean()
+    {
+        int a = 0;
+        for(int i = 1; i < 1000; i++)
+        {
+            for(int j = i + 1; j < 999; j++)
+            {
+                a = (int)Math.sqrt(i * i + j * j);
+                if(i + j + a == 1000 && i < j && j < a && i * i + j * j == a * a)
+                    return i * j * a;
+            }
+
+        }
+
+        return 0;
+    }
+
+    public static void main(String args[])
+    {
+        System.out.print(Pythagorean());
+    }
+}
