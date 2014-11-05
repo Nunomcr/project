@@ -1,0 +1,41 @@
+package pi;
+
+import java.io.PrintStream;
+
+public class ex14
+{
+
+    public ex14()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        int Length = 0;
+        int Maximacadeia = 0;
+        int NumeroMaximo = 0;
+        for(int i = 2; i < 0xf4240; i++)
+        {
+            Length = x(i);
+            if(Length > Maximacadeia)
+            {
+                Maximacadeia = Length;
+                NumeroMaximo = i;
+            }
+        }
+
+        System.out.println(NumeroMaximo);
+    }
+
+    public static int x(long a)
+    {
+        int count;
+        for(count = 0; a != 1L; count++)
+            if(a % 2L == 0L)
+                a /= 2L;
+            else
+                a = 3L * a + 1L;
+
+        return count;
+    }
+}
