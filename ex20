@@ -1,0 +1,32 @@
+package pi;
+
+import java.io.PrintStream;
+import java.math.BigInteger;
+
+public class ex20
+{
+
+    public ex20()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        BigInteger fac = BigInteger.valueOf(1L);
+        for(int index = 1; index <= 100; index++)
+            fac = fac.multiply(BigInteger.valueOf(index));
+
+        String s = fac;
+        int tam = s.length();
+        int i = 0;
+        int soma = 0;
+        for(; i < tam; i++)
+        {
+            String letras = String.valueOf(s.charAt(i));
+            int foo = Integer.parseInt(letras);
+            soma += foo;
+        }
+
+        System.out.println(soma);
+    }
+}
