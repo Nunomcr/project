@@ -1,0 +1,25 @@
+package pi;
+
+
+public class ex17
+{
+
+    public ex17()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        String fim = "vinte, trinta, quarenta";
+    }
+
+    public static int x1(int i)
+    {
+        throw new Error("Unresolved compilation problem: \n\tThis method must return a result of type int\n");
+    }
+
+    public static int x(int i)
+    {
+        throw new Error("Unresolved compilation problem: \n\tThis method must return a result of type int\n");
+    }
+}
