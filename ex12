@@ -1,0 +1,35 @@
+package pi;
+
+import java.io.PrintStream;
+
+public class ex12
+{
+
+    public ex12()
+    {
+    }
+
+    private static int countFactors(int f)
+    {
+        int factors = 0;
+        for(int i = 1; (double)i <= Math.sqrt(f); i++)
+            if(f % i == 0)
+                factors += 2;
+
+        return factors;
+    }
+
+    public static void main(String args[])
+    {
+        int iter = 1;
+        int size = 1;
+        for(int NumFactors = 0; NumFactors <= 500;)
+        {
+            NumFactors = countFactors(size);
+            iter++;
+            size += iter;
+        }
+
+        System.out.println(size - iter);
+    }
+}
