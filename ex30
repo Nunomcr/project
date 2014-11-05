@@ -1,0 +1,28 @@
+package proPI;
+
+public class ex30 {
+
+	public static void main(String[] args) {
+		  System.out.println(new ex30().run());
+		 }
+		  
+		  
+		 public String run() {
+		  int soma = 0;
+		  for (int index = 2; index < 1000000; index++) {
+		   if (index == resposta(index))
+		    soma += index;
+		  }
+		  return Integer.toString(soma);
+		 }
+		  
+		 private static int resposta(int variavel) {
+		  int soma = 0;
+		  while (variavel != 0) {
+		   int res = variavel % 10;
+		   soma += res * res * res * res * res;
+		   variavel /= 10;
+		  }
+		  return soma;
+		 } 
+		}
