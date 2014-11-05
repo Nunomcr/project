@@ -1,0 +1,26 @@
+package pi;
+
+import java.io.*;
+import java.math.BigInteger;
+
+public class ex13
+{
+
+    public ex13()
+    {
+    }
+
+    public static void main(String args[])
+        throws FileNotFoundException, IOException
+    {
+        FileReader fr = new FileReader("c:/ex13.txt");
+        BufferedReader br = new BufferedReader(fr);
+        BigInteger sum = BigInteger.ZERO;
+        String s;
+        String str;
+        for(str = ""; (s = br.readLine()) != null; str = sum.toString())
+            sum = sum.add(new BigInteger(s));
+
+        System.out.println(str.substring(0, 10));
+    }
+}
