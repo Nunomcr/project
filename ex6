@@ -1,0 +1,25 @@
+package pi;
+
+import java.io.PrintStream;
+
+public class ex6
+{
+
+    public ex6()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        int soma2 = 0;
+        int soma1 = 0;
+        for(int index = 1; index <= 100; index++)
+        {
+            soma2 += index * index;
+            soma1 += index;
+        }
+
+        int k = soma1 * soma1 - soma2;
+        System.out.println(k);
+    }
+}
