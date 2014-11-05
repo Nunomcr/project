@@ -1,0 +1,26 @@
+package lol;
+
+public class ex36 {
+		static boolean palimetro(String s)
+		{
+			String s2 = new StringBuffer(s).reverse().toString();
+			if (s.equals(s2))
+				return true;
+			else
+				return false;
+		}
+	 
+		public static void main(String[] args){
+			long begin = System.currentTimeMillis();
+			
+			long Sum = 0; 
+			for (int i = 0; i < 1000000; i++)
+			{
+				if ( palimetro(Integer.toString(i)) && palimetro(Integer.toBinaryString(i)) )
+					Sum += i;
+			}
+			System.out.println(Sum);
+		}
+	}
+
+
