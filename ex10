@@ -1,0 +1,41 @@
+package pi;
+
+import java.io.PrintStream;
+
+public class ex10
+{
+
+    public ex10()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        long sum = 0L;
+        for(int i = 3; i < 0x1e8480; i += 2)
+            if(Primo(i))
+                sum += i;
+
+        System.out.println(sum);
+    }
+
+    public static boolean Primo(int n)
+    {
+        boolean primo = true;
+        if(n < 2)
+            return false;
+        if(n == 2)
+            return true;
+        if(n % 2 == 0)
+            return false;
+        for(int i = 3; (double)i <= Math.sqrt(n); i += 2)
+        {
+            if(n % i != 0)
+                continue;
+            primo = false;
+            break;
+        }
+
+        return primo;
+    }
+}
