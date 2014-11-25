@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+
+
+public class problem23 {
+	public static void main(String[] args) {
+
+	    int limite = 28124;
+	    int soma=0;
+	    int y;
+	    int listaTamanho;
+	    ArrayList<Integer> lista = new ArrayList<Integer>();
+	    ArrayList<Integer> somaLista = new ArrayList<Integer>();
+	    for (int i=0; i<limite; i++) {
+
+	        if (abundant(i)) {
+
+	            lista.add(i);
+	        }
+	    }
+	    listaTamanho = lista.size();
+
+	    for (int i=0; i<listaTamanho; i++) {
+
+	        for (int j=i+1; j<listaTamanho; j++) {
+
+	            y = lista.get(i) + lista.get(j);
+	            if (y < limite) {
+	            	somaLista.add(y);
+	            }
+	        }
+	    }
+
+	    for (int i=1; i<limite; i++) {
+
+	        if (somaLista.contains(i) == false) {
+
+	            soma += i;
+	        }
+	    }
+	    System.out.println(soma);
+	}
+
+	public static boolean abundant(int x) {
+
+	    int soma=0;
+	    for (int i=1; i<x; i++) {
+
+	        if (x%i==0) {
+
+	            soma += i;
+	        }
+	    }
+	    if (soma>x) { return true; }
+	    else { return false; }
+}}
