@@ -1,0 +1,35 @@
+package proPI;
+
+public class ex50 {
+	
+	public static boolean primo(int numero){
+        for(int i=2; i<numero; i++){
+           if(numero%i == 0){
+               return false; 
+           }
+        }
+        return true; 
+}
+	public static void main(String arg[]){
+		
+		int index=1;
+		int soma =0;
+		int maximo = 1000000;
+		for(int i=2; i<20000; i++){
+			if(primo(i)){
+				soma=soma+i;
+				if (soma<maximo){
+					
+					System.out.println(soma);
+				}
+			}
+		}
+		
+		
+		
+		
+	}
+
+
+
+
