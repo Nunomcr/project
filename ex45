@@ -1,0 +1,27 @@
+package proPI;
+
+public class ex45 {
+	public static void main(String args[]){
+		
+		long tri, pent, hex;
+		long max = 100000;
+		long index, cont, num;
+		
+		for(index=1;index<max;index++){
+			tri=index*(index+1)/2;
+			
+			for(cont=1;cont<max;cont++){
+				pent=cont*(3*(cont)-1)/2;
+				if(tri==pent){
+					
+					for(num=1;num<max;num++){
+						hex=num*(2*(num)-1);
+						if(tri==hex){
+							System.out.println(tri);
+						}
+					}
+					
+				}
+			}
+		}
+		
