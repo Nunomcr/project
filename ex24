@@ -1,0 +1,52 @@
+public class problem24 {
+	
+	    
+		public static void main(String[] args) {        
+	 
+	        String a = "0123456789";
+	 
+	        for (int y = 0; y < 999999; y++) {
+	 
+	            int ki = -1;         
+	            int li = 0;
+	            char[] b = a.toCharArray();     
+	 
+	          
+	            for (int k = 0; k < a.length() - 1; k++) {
+	                if (a.charAt(k) < a.charAt(k + 1)) {
+	                    ki = k;
+	                }
+	            }
+	 
+	            if (ki == -1) {
+	                System.out.println("last permutation");
+	                break;
+	            } 
+	 
+	           
+	            for (int l = 0; l < a.length(); l++) {
+	                if (a.charAt(ki) < a.charAt(l)) {
+	                    li = l;
+	                }
+	            }
+	 
+	           
+	            b[ki] = a.charAt(li);
+	            b[li] = a.charAt(ki);
+	 
+	           
+	            String s = new String(b).substring(ki + 1);
+	            int x = 1;
+	            for (int i=s.length(); i > 0; i--) {
+	                b[ki+ x] = s.charAt(i - 1);
+	                x++;
+	            }
+	 
+	            a = new String(b);
+	        }
+	        System.out.println(a);
+	 
+	    }
+	}
+
+
