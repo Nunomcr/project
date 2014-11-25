@@ -1,0 +1,21 @@
+
+public class Problem31 {
+
+
+	    private static int Cdiferentes() {
+	        int tamanho = 200;
+	        int[] VCoins = { 1, 2, 5, 10, 20, 50, 100, 200 };
+	            int[] Cdiferent = new int[tamanho+1];
+	            Cdiferent[0] = 1;
+	            for (int i = 0; i < VCoins.length; i++) {
+	                for (int j = VCoins[i]; j <= tamanho; j++) {
+	                	Cdiferent[j] +=Cdiferent[j - VCoins[i]];
+	                }              
+	            }
+	        return (Cdiferent[Cdiferent.length-1]);
+	    }
+
+	    public static void main(String[] args) {
+	        System.out.println( Cdiferentes());
+	    }
+}
