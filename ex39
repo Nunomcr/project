@@ -1,0 +1,17 @@
+package proPI;
+
+public class ex39 { // a^2+b^2=c^2 e a+b+c=p
+	public static void main(String args[]){
+		for(int p=1; p<=1000; p++)
+			for(int a=1; a<=p; a++){
+				for(int b=1; b<=p; b++){
+					for(int c=1; c<=p; c++){
+						if( a*a + b*b == c*c && p==a+b+c){
+							System.out.println("{"+a+","+b+","+c+"}");
+						}	
+					}
+				}
+			}
+		}
+	}
+}
