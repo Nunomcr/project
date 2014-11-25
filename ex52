@@ -1,0 +1,52 @@
+
+public class problem52 {
+		private static boolean x = false;
+	    private static int y = 0;
+	    
+	    public static void main(String[] args) {
+	        
+	        System.out.println(MenorMultiplos());
+
+	    }
+
+	    
+	    private static int MenorMultiplos(){            
+	        for (int k=1;!x;k *= 10) {            
+	            for (int i = k; i < k * 10 / 6; i++) {
+	                x = true;
+	                for (int j = 2; j <= 6; j++) {
+	                    if (!Igual(i, i* j)) {
+	                        x = false;
+	                        break;
+	                    }
+	                }
+	                if (x) {
+	                    y = i;
+	                    break;
+	                }
+	            }
+	        }
+	        return y;
+	    }
+	    private static boolean Igual(int a, int b) {
+	        int[] l = new int[10];
+	        int t = b;
+	        while (t > 0) {
+	            l[t % 10]++;
+	            t /= 10;
+	        }
+	        t = a;
+	        while (t > 0) {
+	            l[t % 10]--;
+	            t /= 10;
+	        }
+	        for (int i = 0; i < 10; i++) {
+	            if (l[i] != 0) return false;                
+	        }
+	        return true;
+	    }
+	    
+	   
+	}
+
+
