@@ -1,25 +1,41 @@
-package pi;
+package proPI;
 
+public class teste {
 
-public class ex17
-{
-
-    public ex17()
-    {
-    }
-
-    public static void main(String args[])
-    {
-        String fim = "vinte, trinta, quarenta";
-    }
-
-    public static int x1(int i)
-    {
-        throw new Error("Unresolved compilation problem: \n\tThis method must return a result of type int\n");
-    }
-
-    public static int x(int i)
-    {
-        throw new Error("Unresolved compilation problem: \n\tThis method must return a result of type int\n");
-    }
-}
+	public static String[] inicio ={ "","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"};  
+	     
+	      public static String[] meio ={"","ten","twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninety"};  
+	     
+	      public static String[] fim ={"","onehundred","twohundred","threehundred","fourhundred","fivehundred","sixhundred","sevenhundred","eighthundred","ninehundred"};   
+	     
+	       public String tentar(int num){  
+	         String letra = "";  
+	        
+	         if(num == 1000){  
+	            return "onethousand";  
+	         }  
+	         if(num < 20){  
+	            return inicio[num];  
+	         }  
+	         if(num < 100){ 
+	            return meio[num/10] + tentar(num%10);  
+	         } 
+	         letra = tentar(num % 100);  
+	           
+	         if(letra.length() > 0)  
+	            letra = "and" + letra;  
+	                  
+	            return fim[num/100] + letra;  
+	      }  
+	        public int cont(int num){  
+	            return tentar(num).length();  
+	        }  
+	        public static void main(String[] args){  
+	            int resposta = 0;  
+	              
+	            for(int i = 1; i <= 1000; i++){   
+	                resposta += new teste().cont(i);  
+	            }    
+	            System.out.println(resposta);  
+	        } 
+	   }
