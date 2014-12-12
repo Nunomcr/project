@@ -1,0 +1,26 @@
+package lol;
+
+
+import java.math.BigInteger;
+import java.util.HashSet;
+import java.util.Set;
+
+
+public class ex29 {
+
+    private static int calculatePowers() {
+        Set<BigInteger> num = new HashSet<BigInteger>();
+        for (int a = 2; a <= 100; a++) {
+            for (int b = 2; b <= 100; b++) {
+                num.add(BigInteger.valueOf(a).pow(b));
+            }
+        }
+        return num.size();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(calculatePowers());
+    }
+}
+
+// RESPOSTA : 9183
