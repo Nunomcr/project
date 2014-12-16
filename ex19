@@ -1,0 +1,46 @@
+
+public class ex19 {
+	public static void main(String args[]){
+	    int ano=1901;
+	    boolean bissexto=false;
+	    int TotalDomingos=0;
+	    int Dia=2;
+	    while(ano<=2000){
+	    	bissexto=false;
+	        if((ano%4)==0){
+	            if((ano%100)==0 && (ano%400)==0){
+	            	bissexto=true;
+	            } else if((ano%100)==0 && (ano%400)!=0){
+	            	bissexto=false;
+	            } else {
+	            	bissexto=true;
+	            }
+	        }
+	        
+	        for(int mes=1;mes<=12;mes++){
+	           
+	            if(Dia==7){
+	            	TotalDomingos++;
+	            }
+	            if(mes==1 || mes==3 || mes==5 || mes==7 || mes==8 || mes==10 || mes==12){
+	            
+	            	Dia+=3;
+	            } else if(mes==4 || mes==6 || mes==9 || mes==11){ 
+	            
+	            	Dia+=2;              
+	            } else if(mes==2 && bissexto){
+	            
+	            	Dia+=1;
+	            } 
+
+	            if(Dia>7){
+	            	Dia=Dia-7;
+	            }
+	          
+	        }
+	        
+	        ano++;
+	    }
+	    System.out.println(TotalDomingos);
+	}
+}
