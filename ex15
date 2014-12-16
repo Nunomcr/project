@@ -1,0 +1,21 @@
+package proPI;
+import java.math.BigInteger;
+
+public class ex15 {
+	
+	    public static void main(String args[]){
+	        int a = 40;    
+	        int i = 20;     
+	         
+	        System.out.println(factorial(a).divide(factorial(i).multiply(factorial(a - i))));
+	    }
+	    public static BigInteger factorial( int n1 )
+	    {
+	        BigInteger a = BigInteger.ONE;
+	        for (int index = 1; index <= n1; index ++) {
+	            a = a.multiply(BigInteger.valueOf(index));          
+	        }
+	        return a;
+	    }
+	 
+	}
