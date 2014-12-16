@@ -1,0 +1,50 @@
+
+public class Problem51 {
+	
+	    private static int MaximoPrimo = 1000000;
+
+	    private static boolean[] Primedigitreplacements(int maximo) {
+	        boolean[] Primos = new boolean[maximo];
+	        for (int i = 2; i < 1000000; i++) {
+	            if (!Primos[i]) {
+	                for (int j = 2; j < MaximoPrimo / i; j++) {
+	                    Primos[i * j] = true;
+	                }
+	            }
+	        }
+	        return Primos;
+	    }
+
+	    private static int Calcular() {
+	        int i = 100001;
+	        boolean EncontrarPrimo = false;
+	        boolean[] ePrimo = Primedigitreplacements(MaximoPrimo + 1);
+	        do {
+	            if (!ePrimo[i]) {
+	                String str = String.valueOf(i);
+	                for (int j = 0; j <= 2 && !EncontrarPrimo; j++) {
+	                    String x = String.valueOf(j);
+	                    if (str.indexOf(x) != str.lastIndexOf(x)) {
+	                        int Contar = 0;
+	                        for (int k = j; k < 10; k++) {
+	                            String n = str.replace(x, String.valueOf(k));
+	                            if (!ePrimo[Integer.parseInt(n)]) {
+	                            	Contar++;
+	                            }
+	                        }
+	                        if(Contar == 8){
+	                        	EncontrarPrimo=true;
+	                        }
+	                    }
+	                }
+	            }
+	            i += 1;
+	        } while (!EncontrarPrimo);
+	        return (i-1);
+	    }
+
+	    public static void main(String[] args) {
+	      
+	        System.out.println(Calcular() );
+	}}
+
