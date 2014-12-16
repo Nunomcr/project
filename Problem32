@@ -1,0 +1,41 @@
+  import java.util.Arrays;
+	import java.util.HashSet;
+	import java.util.Iterator;
+	import java.util.Set;
+
+public class Problem32 {
+	
+	    private static int calcular() {
+
+	        int resposta = 0;
+	        Set<Integer> set = new HashSet<>();
+	        for (int i = 2; i < 100; i++) {
+	            int x=(i>9)?123:1234;
+	            int y=10000/i+1;            
+	            for (int j = x; j < y; j++) {
+	                int produto = i * j;
+	                String pandigitalnumero = "" + i + j + produto;
+	                if (ePandigital (pandigitalnumero)) {
+	                    set.add(produto);
+	                }
+	            }
+	        }
+	        Iterator<Integer> itr =set.iterator();
+	        while(itr.hasNext()){
+	            resposta +=itr.next();
+	        }
+	        return resposta;
+	    }
+
+	    private static boolean ePandigital (String x) {
+	        char[] y = x.toCharArray();
+	        Arrays.sort(y);
+	        return (new String(y).equals("123456789"));
+	    }
+
+	    public static void main(String[] args) {
+	        System.out.println(calcular());
+	    }
+	}
+
+
