@@ -1,0 +1,31 @@
+
+public class Problem53 {
+
+	
+	   private static int Maximo = 1000000;
+	   private static int Limite = 100;
+	   private static int[][] TrianguloPascal = new int[Limite+1][Limite+1];
+
+	   private static int Resultado() {
+	       int soma=0;
+	       for (int x = 0; x <= Limite; x++) {
+	    	   TrianguloPascal[x][0] = 1;
+	       }
+	       for (int x = 1; x <= Limite; x++) {
+	           for (int y = 1; y <= x; y++) {
+	        	   TrianguloPascal[x][y] = TrianguloPascal[x - 1][y] + TrianguloPascal[x - 1][y - 1];
+	               if (TrianguloPascal[x][y] > Maximo) {
+	            	   TrianguloPascal[x][y] = Maximo;
+	                   soma++;
+	               }
+	           }
+	       }
+	       return soma;
+	   }
+
+	   public static void main(String[] args) {
+	      
+	       System.out.println(Resultado() );
+	   }
+
+	}
